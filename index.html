@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creche Escola Estrela da Manhã - Atendimento</title>
+    <style>
+        /* Estilos básicos para deixar o app bonito e responsivo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #28a745; /* Cor verde para o botão de ligar */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #218838;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #0056b3;
+            cursor: pointer;
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            display: none; /* Esconde a resposta por padrão */
+            padding: 10px 0;
+            color: #555;
+        }
+        .faq-answer.show {
+            display: block; /* Mostra a resposta quando ativo */
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creche Escola Estrela da Manhã</h1>
+        <p style="text-align: center;">Estamos aqui para te ajudar. Encontre respostas para suas dúvidas ou entre em contato diretamente conosco.</p>
+
+        <a href="tel:+5521982788782" class="contact-button">Ligar para Atendimento</a>
+        
+        <a href="FAQ.pdf" download class="contact-button" style="background-color: #007bff;">Baixar Perguntas Frequentes (PDF)</a>
+        ---
+
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Qual é o horário de funcionamento?</div>
+                <div class="faq-answer">Nosso horário de funcionamento é de Segunda a Sexta, das 9h às 18h.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Quais são as formas de pagamento aceitas?</div>
+                <div class="faq-answer">Aceitamos Pix, cartão de crédito (principais bandeiras) e dinheiro.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Vocês fazem entrega?</div>
+                <div class="faq-answer">Sim, fazemos entregas em toda a região metropolitana. Consulte as taxas de entrega para sua localidade.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Como faço para agendar um serviço/visita?</div>
+                <div class="faq-answer">Você pode agendar um serviço/visita ligando para nós no número acima ou enviando um e-mail para contato@seunegocio.com.br.</div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Nome do Seu Negócio. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função JavaScript para mostrar/esconder as respostas do FAQ
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling; // Pega o próximo elemento, que é a resposta
+            element.classList.toggle('active'); // Adiciona/remove a classe 'active' para mudar o sinal +/-
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+            } else {
+                answer.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>
